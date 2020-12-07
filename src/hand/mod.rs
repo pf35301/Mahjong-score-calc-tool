@@ -1,34 +1,42 @@
-use core::panicking::panic;
-
 use super::tiles::Tile;
 use super::tiles::WindTypes;
 
 pub struct HandTiles {
-    handTiles: Vec<Tile>, //手持ちの牌
-    meldedHandTiles: Option<Vec<Tile>>, //鳴いた後の牌
-    winningTile: Tile,
-    handOption: HandOption,
+    hand_tiles: Vec<Tile>, //手持ちの牌
+    melded_hand_tiles: Option<Vec<Tile>>, //鳴いた後の牌
+    winning_tile: Tile,
+    hand_option: HandOption,
 }
 
 impl HandTiles {
-    fn new(handTiles: Vec<Tile>, meldedHandTiles: Option<Vec<Tile>>, winningTile: Tile, handOption: HandOption) -> Self {
-        if (handTiles.len() + meldedHandTiles.unwrap_or(vec![]).len()) != 13 {
-            panic!("The hands are not enough.");
+    pub fn new(hand_tiles: Vec<Tile>, melded_hand_tiles: Option<Vec<Tile>>, winning_tile: Tile, hand_option: HandOption) -> Self {
+        let length = &hand_tiles.len();
+
+        if let Some(melded) = melded_hand_tiles.as_ref() {
+            let length = length + melded.len();
         }
 
-        HandTiles { handTiles, meldedHandTiles, winningTile, handOption }
+        if *length != 13 {
+            panic!("The hands are not enough.");
+        }
+        
+        HandTiles { hand_tiles, melded_hand_tiles, winning_tile, hand_option }
+    }
+
+    pub fn calc_hand_score(&self) -> u32 {
+        0
     }
 }
 
-struct HandOption {
+pub struct HandOption {
     dora: u32,
-    honbaNumber: u32,
+    honba_number: u32,
     tsumo: bool,
-    seatWind: WindTypes,
+    seat_wind: WindTypes,
 }
 
 impl HandOption {
-    fn new(dora: u32, honbaNumber: u32, tsumo: bool, seatWind: WindTypes) -> Self {
-        HandOption { dora, honbaNumber, tsumo, seatWind }
+    pub fn new(dora: u32, honba_number: u32, tsumo: bool, seat_wind: WindTypes) -> Self {
+        HandOption { dora, honba_number, tsumo, seat_wind }
     }
 }
