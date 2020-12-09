@@ -1,4 +1,4 @@
-use super::hand::HandTiles;
+use crate::HandTiles;
 
 pub fn calc_yaku(hand_tiles: HandTiles) -> u32 {
     0

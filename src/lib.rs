@@ -1,12 +1,23 @@
 pub mod tiles;
+
+pub use self::tiles::Tile::Tile;
+pub use self::tiles::TilesType::TilesType;
+pub use self::tiles::WindAndHonors::WindAndHonors;
+pub use self::tiles::Honors::Honors;
+pub use self::tiles::WindTypes::WindTypes;
+
 pub mod hand;
+
+pub use self::hand::HandOption::HandOption;
+pub use self::hand::HandTiles::HandTiles;
+
 pub(crate) mod calculator;
 
 #[cfg(test)]
 mod tests {
 
     use crate::hand::{HandTiles, HandOption};
-    use crate::tiles::{Tile, WindTypes, TilesType};
+    use crate::{Tile, WindTypes, TilesType};
 
     #[test]
     fn it_works() {
