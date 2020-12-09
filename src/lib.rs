@@ -10,6 +10,7 @@ pub mod hand;
 
 pub use self::hand::HandOption::HandOption;
 pub use self::hand::HandTiles::HandTiles;
+pub use self::hand::Yaku::Yaku;
 
 pub(crate) mod calculator;
 
