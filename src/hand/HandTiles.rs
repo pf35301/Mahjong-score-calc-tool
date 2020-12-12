@@ -1,11 +1,11 @@
-use crate::Tile;
+use crate::{Tile, calculator};
 use crate::HandOption;
 
 pub struct HandTiles {
     hand_tiles: Vec<Tile>, //手持ちの牌
     melded_hand_tiles: Option<Vec<Tile>>, //鳴いた後の牌
     winning_tile: Tile,
-    hand_option: HandOption,
+    pub hand_option: HandOption,
 }
 
 impl HandTiles {
@@ -24,6 +24,8 @@ impl HandTiles {
     }
 
     pub fn calc_hand_score(&self) -> u32 {
-        0
+        let counter = calculator::YakuAndFuCalculator::new(self);
+
+        counter.calc_score()
     }
 }

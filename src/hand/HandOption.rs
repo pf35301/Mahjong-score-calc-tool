@@ -4,7 +4,7 @@ pub struct HandOption {
     dora: u32,
     honba_number: u32,
     tsumo: bool,
-    seat_wind: WindTypes,
+    pub seat_wind: WindTypes,
 }
 
 impl HandOption {
