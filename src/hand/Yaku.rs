@@ -14,7 +14,7 @@ pub enum Yaku {
     All_Triples, //対々和
     Three_Color_Runs, //三色同順
     Seven_Pairs, //七対子
-    Full_straight, //一気通貫
+    Full_Straight, //一気通貫
     Mixed_Outside_Hand, //混全帯么九
     Three_Concealed_Triples, //三暗刻
     Little_Dragons, //小三元
@@ -39,4 +39,26 @@ pub enum Yaku {
     Nine_Gates, //九蓮宝燈
     Four_Quads, //四槓子
     Blessing_Of_Heaven, //天和
+}
+
+impl Yaku {
+    pub fn Han(self) -> u32 {
+        match self {
+            Self::Reach | Self::All_Simples | Self::All_Runs | Self::Concealed_Self_Draw | Self::Concealed_Self_Draw |
+            Self::First_Turn_Win | Self::Double_Run | Self::Final_Tile_Win | Self::Kings_Tile_Draw | Self::Double_Reach | 
+            Self::Add_A_Quad
+                => 1,
+            Self::All_Triples | Self::Three_Color_Runs | Self::Seven_Pairs | Self::Full_Straight | Self::Mixed_Outside_Hand |
+            Self::Three_Concealed_Triples | Self::Little_Dragons | Self::All_Terminals_And_Honors | Self::Three_Color_Tiples |
+            Self::Three_Quads
+                => 2,
+            Self::Half_Flush | Self::Pure_Outside_Hand | Self::Two_Double_Runs
+                => 3,
+            Self::Full_Flush
+                => 6,
+            Self::Four_Concealed_Triples | Self::Thirteen_Orphans | Self::Big_Doragons | Self::Four_Winds | Self::All_Honors |
+            Self::All_Terminals | Self::Blessing_Of_Earth | Self::All_Green | Yaku::Nine_Gates | Yaku::Four_Quads | Yaku::Blessing_Of_Heaven
+                => 13,
+        }
+    }
 }

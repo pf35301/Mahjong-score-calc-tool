@@ -23,14 +23,7 @@ impl HanAndFuCalculator {
     }
     
     fn calc_han(&self, hand_tiles: &HandTiles) -> u32 {
-        match hand_tiles.hand_option.seat_wind {
-            crate::WindTypes::East => {
-                
-            },
-            _ => {
-                
-            }
-        }
+        0
     }
 
     fn calc_fu(&self, hand_tiles: &HandTiles) -> u32 {

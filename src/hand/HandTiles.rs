@@ -24,7 +24,7 @@ impl HandTiles {
     }
 
     pub fn calc_hand_score(&self) -> u32 {
-        let counter = calculator::YakuAndFuCalculator::new(self);
+        let counter = calculator::HanAndFuCalculator::new(self);
 
         counter.calc_score()
     }
