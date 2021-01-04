@@ -17,7 +17,7 @@ pub(crate) mod calculator;
 #[cfg(test)]
 mod tests {
 
-    use crate::hand::{HandTiles, HandOption};
+    use crate::{HandTiles, HandOption};
     use crate::{Tile, WindTypes, TilesType};
 
     #[test]
@@ -28,6 +28,8 @@ mod tests {
     #[test]
     fn CalcHandTiles() {
         let hand_option = HandOption::new(3, 1, true, WindTypes::North);
+
+        //[TODO] マクロ化
         let hand_tile_vec = vec![
             Tile::new(TilesType::Bamboo(1)), Tile::new(TilesType::Bamboo(1)), Tile::new(TilesType::Bamboo(2)), Tile::new(TilesType::Bamboo(2)),
             Tile::new(TilesType::Bamboo(3)), Tile::new(TilesType::Bamboo(3)), Tile::new(TilesType::Bamboo(7)), Tile::new(TilesType::Bamboo(7)),
