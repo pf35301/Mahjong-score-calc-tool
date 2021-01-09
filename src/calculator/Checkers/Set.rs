@@ -1,5 +1,8 @@
-use crate::{HandTiles};
-struct Set {
+use crate::tiles::Tile::Tile;
+use super::SetType::SetType;
+use super::WaitingPattern::WaitingPattern;
+
+pub struct Set {
     set: Vec<Tile>,
     set_type: SetType,
     waiting_pattern: Option<WaitingPattern>,

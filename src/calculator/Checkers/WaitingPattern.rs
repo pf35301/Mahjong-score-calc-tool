@@ -1,4 +1,4 @@
-enum WaitingPattern {
+pub enum WaitingPattern {
             //ツモ : ロン; 符
     Ryanmen,//0 : 2
     Kanchan,//2 : 4

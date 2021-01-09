@@ -1,5 +1,5 @@
-pub mod Honors;
-pub mod Tile;
-pub mod TilesType;
-pub mod WindAndHonors;
-pub mod WindTypes;
+pub(crate) mod Honors;
+pub(crate) mod Tile;
+pub(crate) mod TilesType;
+pub(crate) mod WindAndHonors;
+pub(crate) mod WindTypes;

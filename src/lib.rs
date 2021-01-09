@@ -1,10 +1,7 @@
-pub mod tiles;
-
-pub use self::tiles::Honors::Honors;
-pub use self::tiles::Tile::Tile;
-pub use self::tiles::TilesType::TilesType;
-pub use self::tiles::WindAndHonors::WindAndHonors;
-pub use self::tiles::WindTypes::WindTypes;
+pub(crate) mod tiles;
+use tiles::Tile::Tile;
+use tiles::TilesType::TilesType;
+use tiles::WindTypes::WindTypes;
 
 pub mod hand;
 
@@ -14,7 +11,7 @@ pub use self::hand::Yaku::Yaku;
 
 pub(crate) mod calculator;
 
-pub use self::calculator::ScoreCalculator::ScoreCalculator;
+pub(crate) use self::calculator::ScoreCalculator::ScoreCalculator;
 pub(crate) use self::calculator::Checkers::HandSetChecker;
 
 #[cfg(test)]
@@ -30,7 +27,7 @@ mod tests {
 
     #[test]
     fn CalcHandTiles() {
-        let hand_option = HandOption::new(3, 1, true, WindTypes::North);
+        let hand_option = HandOption::new(3, 1, true, true, WindTypes::North);
 
         //[TODO] マクロ化
         let hand_tile_vec = vec![

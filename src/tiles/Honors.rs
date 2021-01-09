@@ -1,5 +1,5 @@
 pub enum Honors {
-    WhiteDoragon,
-    GreenDoragon,
-    RedDoragon,
+    WhiteDoragon, //白
+    GreenDoragon, //發
+    RedDoragon,   //中
 }

@@ -1,7 +1,7 @@
-use crate::TilesType;
+use super::TilesType::TilesType;
 
 pub struct Tile {
-    tiles_type: TilesType,
+    pub tiles_type: TilesType,
 }
 //pub useを使え
 impl Tile {

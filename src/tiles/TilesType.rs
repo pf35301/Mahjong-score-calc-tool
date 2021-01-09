@@ -1,4 +1,4 @@
-use crate::WindAndHonors;
+use super::WindAndHonors::WindAndHonors;
 
 pub enum TilesType {
     Character(u32), //萬子

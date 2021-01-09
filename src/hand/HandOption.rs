@@ -1,4 +1,4 @@
-use crate::WindTypes;
+use crate::tiles::WindTypes::WindTypes;
 
 pub struct HandOption {
     dora: u32,

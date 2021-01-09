@@ -1,5 +1,6 @@
 use crate::HandOption;
-use crate::{ScoreCalculator, Tile};
+use crate::ScoreCalculator;
+use crate::tiles::Tile::Tile;
 
 pub struct HandTiles {
     pub hand_tiles: Vec<Tile>,                //手持ちの牌
