@@ -1,10 +1,10 @@
 use crate::HandOption;
-use crate::{calculator, Tile};
+use crate::{ScoreCalculator, Tile};
 
 pub struct HandTiles {
-    hand_tiles: Vec<Tile>,                //手持ちの牌
-    melded_hand_tiles: Option<Vec<Tile>>, //鳴いた後の牌
-    winning_tile: Tile,
+    pub hand_tiles: Vec<Tile>,                //手持ちの牌
+    pub melded_hand_tiles: Option<Vec<Tile>>, //鳴いた後の牌
+    pub winning_tile: Tile,
     pub hand_option: HandOption,
 }
 
@@ -37,7 +37,7 @@ impl HandTiles {
     }
 
     pub fn calc_hand_score(&self) -> u32 {
-        let counter = calculator::ScoreCalculator::new(self);
+        let counter = ScoreCalculator::new(self);
 
         counter.calc_score()
     }
