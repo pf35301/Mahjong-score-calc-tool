@@ -1,3 +1,6 @@
+#[macro_use]
+pub mod macros;
+
 pub(crate) mod tiles;
 use tiles::Tile::Tile;
 use tiles::TilesType::TilesType;
@@ -11,8 +14,8 @@ pub use self::hand::Yaku::Yaku;
 
 pub(crate) mod calculator;
 
-pub(crate) use self::calculator::ScoreCalculator::ScoreCalculator;
 pub(crate) use self::calculator::Checkers::HandSetChecker;
+pub(crate) use self::calculator::ScoreCalculator::ScoreCalculator;
 
 #[cfg(test)]
 mod tests {
@@ -30,20 +33,20 @@ mod tests {
         let hand_option = HandOption::new(3, 1, true, true, WindTypes::North);
 
         //[TODO] マクロ化
-        let hand_tile_vec = vec![
-            Tile::new(TilesType::Bamboo(1)),
-            Tile::new(TilesType::Bamboo(1)),
-            Tile::new(TilesType::Bamboo(2)),
-            Tile::new(TilesType::Bamboo(2)),
-            Tile::new(TilesType::Bamboo(3)),
-            Tile::new(TilesType::Bamboo(3)),
-            Tile::new(TilesType::Bamboo(7)),
-            Tile::new(TilesType::Bamboo(7)),
-            Tile::new(TilesType::Bamboo(8)),
-            Tile::new(TilesType::Bamboo(8)),
-            Tile::new(TilesType::Bamboo(9)),
-            Tile::new(TilesType::Bamboo(9)),
-            Tile::new(TilesType::Bamboo(9)),
+        let hand_tile_vec = hand_tiles![
+            TilesType::Bamboo(1),
+            TilesType::Bamboo(1),
+            TilesType::Bamboo(2),
+            TilesType::Bamboo(2),
+            TilesType::Bamboo(3),
+            TilesType::Bamboo(3),
+            TilesType::Bamboo(7),
+            TilesType::Bamboo(7),
+            TilesType::Bamboo(8),
+            TilesType::Bamboo(8),
+            TilesType::Bamboo(9),
+            TilesType::Bamboo(9),
+            TilesType::Bamboo(9)
         ];
         let winning_tile = Tile::new(TilesType::Bamboo(9));
 
