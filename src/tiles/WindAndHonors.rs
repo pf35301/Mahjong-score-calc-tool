@@ -3,5 +3,5 @@ use super::WindTypes::WindTypes;
 
 pub enum WindAndHonors {
     Wind(WindTypes), //風配
-    Honor(Honors), //字牌
+    Honor(Honors),   //字牌
 }

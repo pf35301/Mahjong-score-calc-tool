@@ -1,4 +1,4 @@
 pub mod HandSetChecker;
-mod Set;
+pub mod Set;
 mod SetType;
 mod WaitingPattern;

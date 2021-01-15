@@ -30,7 +30,7 @@ mod tests {
 
     #[test]
     fn CalcHandTiles() {
-        let hand_option = HandOption::new(3, 1, true, true, WindTypes::North);
+        let hand_option = HandOption::new(3, 1, true, true, WindTypes::North, WindTypes::North);
 
         //[TODO] マクロ化
         let hand_tile_vec = hand_tiles![
