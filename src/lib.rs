@@ -52,6 +52,6 @@ mod tests {
 
         let hand = HandTiles::new(hand_tile_vec, None, winning_tile, hand_option);
 
-        assert_eq!(48000, hand.calc_hand_score());
+        assert_eq!(48000, hand.calc_score());
     }
 }

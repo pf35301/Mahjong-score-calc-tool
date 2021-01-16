@@ -37,9 +37,9 @@ impl HandTiles {
         }
     }
 
-    pub fn calc_hand_score(self) -> usize {
+    pub fn calc_score(self) -> usize {
         let counter = ScoreCalculator::new(self);
 
-        counter.calc_score()
+        counter.calc()
     }
 }

@@ -31,7 +31,7 @@ impl ScoreCalculator {
     //符 * 4 * 2^(翻数)
     //親
     //符 * 6 * 2^(翻数)
-    pub fn calc_score(self) -> usize {
+    pub fn calc(self) -> usize {
         match &self.hand_tiles.hand_option.is_parent() {
             false => &self.FuScore * 4 * 2usize.pow(TryFrom::try_from(self.HanScore).unwrap()),
             true => &self.FuScore * 6 * 2usize.pow(TryFrom::try_from(self.HanScore).unwrap()),
