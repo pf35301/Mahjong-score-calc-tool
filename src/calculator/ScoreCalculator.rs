@@ -1,11 +1,14 @@
-use std::usize;
 use std::convert::TryFrom;
+use std::usize;
 
 use super::Checkers::{HandSetChecker::HandSetChecker, Set::Set};
-use crate::{hand, tiles::TilesType::TilesType};
+use crate::hand;
+use crate::tiles::Honors::Honors;
 use crate::tiles::WindAndHonors::WindAndHonors;
 use crate::tiles::WindTypes::WindTypes;
-use crate::{tiles::Tile::Tile, HandTiles};
+use crate::HandTiles;
+use crate::Tile;
+use crate::TilesType;
 
 pub struct ScoreCalculator {
     hand_tiles: HandTiles,
@@ -46,4 +49,18 @@ impl ScoreCalculator {
     }
 }
 
-static THIRTEENORPHANS: Vec<Tile> = vec![];
+static THIRTEENORPHANS: Vec<Tile> = hand_tiles![
+    TilesType::Character(1),
+    TilesType::Character(9),
+    TilesType::Circle(1),
+    TilesType::Circle(9),
+    TilesType::Bamboo(1),
+    TilesType::Bamboo(9),
+    TilesType::Other(WindAndHonors::Wind(WindTypes::North)),
+    TilesType::Other(WindAndHonors::Wind(WindTypes::South)),
+    TilesType::Other(WindAndHonors::Wind(WindTypes::West)),
+    TilesType::Other(WindAndHonors::Wind(WindTypes::East)),
+    TilesType::Other(WindAndHonors::Honor(Honors::WhiteDoragon)),
+    TilesType::Other(WindAndHonors::Honor(Honors::GreenDoragon)),
+    TilesType::Other(WindAndHonors::Honor(Honors::RedDoragon))
+];
